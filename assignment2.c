@@ -49,8 +49,8 @@ int main(void) {
             // close unused ends
             for (int j = 0; j < NUM_CHILDREN; j++) {
                 if (j == i) { // given we are at the 'current' child
-                    close(p2c[j][1]);  // child reads from this pipe
-                    close(c2p[j][0]);  // child writes to this pipe
+                    close(p2c[j][1]);
+                    close(c2p[j][0]); 
                 } else {
                     // close all other pipes not used by this child
                     close(p2c[j][0]); close(p2c[j][1]);
