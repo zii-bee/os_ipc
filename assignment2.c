@@ -303,16 +303,16 @@ EventType get_event_type(const char *event_str) {
     return UNKNOWN;
 }
 
-typedef struct {
+typedef struct FileEntry {
     char *path;
     int count;
-    struct FileEntry *next;
-} FileEntry;
+    FileEntry *next;  // Use typedef'd type
+};
 
-typedef struct {
+typedef struct UserEntry {
     char *username;
-    struct UserEntry *next;
-} UserEntry;
+    UserEntry *next;  // Use typedef'd type
+};
 
 void child_process(int index, int input_fd, int output_fd) {
     close(input_fd);
